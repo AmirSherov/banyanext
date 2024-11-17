@@ -1,0 +1,26 @@
+{
+  "name": "banyanext",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "json-server": "json-server --watch db.json --port 3001",
+    "server": "concurrently \"npm run dev\" \"npm run json-server"
+  },
+  "dependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "emailjs-com": "^3.2.0",
+    "next": "^15.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-toastify": "^10.0.6",
+    "sass": "^1.81.0",
+    "sweetalert2": "^11.14.5",
+    "typescript": "^5.6.3",
+    "concurrently": "^7.6.0" 
+  }
+}

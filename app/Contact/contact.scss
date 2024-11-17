@@ -1,0 +1,148 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url("/images/navigation.png"),auto;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+    height: 100vh;
+  }
+  
+  .contact-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: url('/images/wood.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 2s ease-out;
+    position: relative;
+  }
+  
+  .contact-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    animation: slideUp 1.5s ease-out;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  }
+  
+  .contact-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #d4af37;
+    animation: fadeIn 1.5s ease-out;
+    letter-spacing: 2px;
+  }
+  
+  .contact-subtitle {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-out;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .input-field,
+  .textarea-field {
+    padding: 18px;
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1rem;
+    outline: none;
+    transition: 0.4s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .input-field:focus,
+  .textarea-field:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  }
+  
+  .submit-button {
+    padding: 18px;
+    background-color: #d4af37;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .submit-button:hover {
+    background-color: #b88a27;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  }
+  
+  .submit-button:active {
+    transform: scale(0.98);
+  }
+  
+  .status {
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 20px;
+    animation: fadeIn 3s ease-out;
+    font-weight: bold;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes hoverBounce {
+    0% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-5px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  

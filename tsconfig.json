@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "es2016",  /* Set the JavaScript language version */
+    "module": "commonjs",  /* Specify module code generation */
+    "esModuleInterop": true,  /* Enable interoperability for CommonJS modules */
+    "forceConsistentCasingInFileNames": true,  /* Ensure consistent casing for file names */
+    "strict": true,  /* Enable strict type-checking options */
+    "skipLibCheck": true,  /* Skip type checking for declaration files */
+    "lib": ["dom", "dom.iterable", "esnext"],  /* Include necessary libraries */
+    "allowJs": true,  /* Allow JavaScript files in the project */
+    "noEmit": true,  /* Prevent emitting files */
+    "incremental": true,  /* Enable incremental compilation */
+    "moduleResolution": "node",  /* Use Node.js module resolution strategy */
+    "resolveJsonModule": true,  /* Enable importing JSON modules */
+    "isolatedModules": true,  /* Ensure each file can be transpiled independently */
+    "jsx": "preserve",  /* Keep JSX syntax as is */
+    "plugins": [
+      {
+        "name": "next"  /* Use the Next.js plugin for TypeScript */
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",  /* Include Next.js type definitions */
+    ".next/types/**/*.ts",  /* Include generated types for Next.js */
+    "**/*.ts",  /* Include all TypeScript files */
+    "**/*.tsx"  /* Include all TypeScript and TSX files */
+  ],
+  "exclude": [
+    "node_modules"  /* Exclude node_modules from compilation */
+  ]
+}
