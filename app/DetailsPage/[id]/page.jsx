@@ -2,12 +2,12 @@
 import { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useParams } from 'next/navigation';  // Импортируем useParams из next/navigation
+import { useParams } from 'next/navigation'; 
 
 import "./detailsPage.scss";
 
 export default function DetailsPage() {
-    const { id } = useParams();  // Используем useParams для получения параметра id
+    const { id } = useParams();  
     const [product, setProduct] = useState(null); 
     const [loading, setLoading] = useState(true);
 
