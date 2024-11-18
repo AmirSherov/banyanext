@@ -242,9 +242,9 @@ body {
     background-color: var(--btn-color);
     border-radius: 1em;
     outline: none;
-    box-shadow: 0 0 1em .20em var(--glow-color),
+    box-shadow: 0 0 1em 0.1em var(--glow-color),
            0 0 4em 1em var(--glow-spread-color),
-           inset 0 0 .50em .20em var(--glow-color);
+           inset 0 0 .10em .10em var(--glow-color);
     text-shadow: 0 0 .5em var(--glow-color);
     position: relative;
     transition: all 0.3s;
@@ -262,24 +262,24 @@ button::after {
     background-color: var(--glow-spread-color);
     filter: blur(2em);
     opacity: .7;
-    transform: perspective(2.5em) rotateX(40deg) scale(1, .7);
+    transform: perspective(2.5em) rotateX(40deg) scale(1, .3);
 @media (max-width:450px) {
-    transform: perspective(3em) rotateX(40deg) scale(1, .7);
+    transform: perspective(3em) rotateX(40deg) scale(1, .3);
 }
 @media (max-width:380px) {
-    transform: perspective(6em) rotateX(50deg) scale(1, .7);
+    transform: perspective(2.1em) rotateX(35deg) scale(1, .4);
 }
 }
 
-button:hover {
+.favorite-btn:hover {
     color: black;
     background-color: var(--glow-color);
-    box-shadow: 0 0 1em .25em var(--glow-color),
-           0 0 4em 2em var(--glow-spread-color),
-           inset 0 0 .75em .25em var(--glow-color);
+    box-shadow: 0 0 0.5em .05em var(--glow-color),
+           0 0 5em 1em var(--glow-spread-color),
+           inset 0 0 0.5em .05em var(--glow-color);
 }
 
-button:active {
+.favorite-btn:active {
     box-shadow: 0 0 0.6em .25em var(--glow-color),
            0 0 2.5em 2em var(--glow-spread-color),
            inset 0 0 .5em .25em var(--glow-color);
