@@ -2,137 +2,305 @@ body {
   background-color: #202020;
   color: #f0f0f0;
 }
-*{
-  cursor: url("/images/navigation.png"),auto;
+
+* {
+  cursor: url("/images/navigation.png"), auto;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
 }
+
 .about-container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    color: #fff;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.intro-section {
+  text-align: center;
+  background: #2c2c2c;
+  padding: 40px 20px;
+  border-bottom: 2px solid #444;
+}
+
+.page-title {
+  font-size: 3rem;
+  color: #d4af37;
+  margin-bottom: 10px;
+}
+
+.intro-text {
+  font-size: 1.5rem;
+  color: #b0b0b0;
+}
+
+.team-section {
+  padding: 60px 20px;
+  background: #3a3a3a;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #d4af37;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.team-member {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+}
+
+.team-member-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.member-info.hovered {
+  opacity: 1;
+}
+
+.mission-section {
+  background: #4a4a4a;
+  padding: 60px 20px;
+  text-align: center;
+
+
+.cube-loader {
+  position: relative;
+  width: 100px; 
+  height: 100px; 
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg);
+  animation: animate 6s linear infinite;
+  margin: 50px auto;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotateX(-30deg) rotateY(0deg);
   }
-  
-  .intro-section {
-    text-align: center;
-    background: #2c2c2c;
-    padding: 40px 20px;
-    border-bottom: 2px solid #444;
+  100% {
+    transform: rotateX(-30deg) rotateY(360deg);
   }
-  
-  .page-title {
-    font-size: 3rem;
-    color: #d4af37;
-    margin-bottom: 10px;
-  }
-  
-  .intro-text {
-    font-size: 1.5rem;
-    color: #b0b0b0;
-  }
-  
-  .team-section {
-    padding: 60px 20px;
-    background: #3a3a3a;
-    text-align: center;
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #d4af37;
-  }
-  
-  .team-members {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .team-member {
-    position: relative;
-    width: 250px;
-    height: 350px;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-  }
-  
-  .team-member:hover {
-    transform: translateY(-10px);
-  }
-  
-  .team-member-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .member-info {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .member-info.hovered {
-    opacity: 1;
-  }
-  
-  .mission-section {
-    background: #4a4a4a;
-    padding: 60px 20px;
-    text-align: center;
-  }
-  
-  .mission-text {
-    font-size: 1.2rem;
-    color: #b0b0b0;
-  }
-  
-  .testimonials-section {
-    padding: 60px 20px;
-    background: #3a3a3a;
-    text-align: center;
-  }
-  
-  .testimonial-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .testimonial-card {
-    background: #5a5a5a;
-    padding: 20px;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .testimonial-text {
-    font-size: 1.1rem;
-    color: #fff;
-    margin-bottom: 15px;
-  }
-  
-  .client-name {
-    text-align: right;
-    color: #d4af37;
-  }
-  
-  .contact-section {
-    padding: 60px 20px;
-    background: #2c2c2c;
-    text-align: center;
-  }
-  
-  .contact-text {
-    font-size: 1.2rem;
-    color: #b0b0b0;
-  }
-  
+}
+
+.cube-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.cube-wrapper .cube-span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(calc(90deg * var(--i))) translateZ(50px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #f7d500, #f8a500); 
+  font-size: 14px; 
+  color: black;
+  font-weight: bold;
+  box-shadow: 0 0 10px #f7d500, 0 0 20px #f8a500, 0 0 30px #f7d500; 
+  text-shadow: 0 0 10px #f7d500, 0 0 20px #f8a500, 0 0 30px #f7d500; 
+}
+
+.text-container {
+  text-align: center;
+  padding: 5px;
+}
+
+.cube-top {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #f7d500, #f8a500);
+  transform: rotateX(90deg) translateZ(50px);
+  transform-style: preserve-3d;
+  z-index: 10;
+}
+}
+
+.mission-text {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+}
+
+.testimonials-section {
+  padding: 60px 20px;
+  background: #3a3a3a;
+  text-align: center;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: #5a5a5a;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.client-name {
+  text-align: right;
+  color: #d4af37;
+}
+
+.contact-section {
+  padding: 60px 20px;
+  background: #2c2c2c;
+  text-align: center;
+}
+
+.contact-text {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+}
+
+.logos-section{
+  width: 100%;
+  height: auto;
+  background-color: #2c2c2c;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+.light-button {
+  display: inline-block;
+  margin: 20px;
+}
+
+.light-button button.bt {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  outline: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.light-button button.bt .button-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 150px;
+  background-color: #0a0a0a;
+  border-radius: 5px;
+  color: #0f0f0f;
+  font-weight: 700;
+  transition: 300ms;
+  outline: #0f0f0f 2px solid;
+  outline-offset: 20;
+}
+
+.light-button button.bt .button-holder svg {
+  height: 50px;
+  fill: #000;
+  transition: 300ms;
+}
+
+.light-button button.bt .light-holder {
+  position: absolute;
+  height: 250px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.light-button button.bt .light-holder .dot {
+  position: absolute;
+  top: 0;
+  left: 70px;
+  width: 10px;
+  height: 10px;
+  background-color: #0a0a0a;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.light-button button.bt .light-holder .light {
+  position: absolute;
+  top: 0;
+  left:-25px;
+  width: 200px;
+  height: 200px;
+  clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+  background: transparent;
+}
+
+.light-button button.bt:hover .button-holder svg {
+  fill: rgba(88, 101, 242, 1);
+}
+
+.light-button button.bt:hover .button-holder {
+  color: rgba(88, 101, 242, 1);
+  outline: rgba(88, 101, 242, 1) 2px solid;
+  outline-offset: 2px;
+}
+
+.light-button button.bt:hover .light-holder .light {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(88, 101, 242, 1) 0%,
+    rgba(255, 255, 255, 0) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+.light-button button.bt svg {
+  width: 50px;
+  height: 50px;
+  fill: #0088cc; 
+  transition: all 0.3s ease;
+}
+
+.light-button button.bt:hover svg {
+  fill: #4CAF50;
+}

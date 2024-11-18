@@ -145,7 +145,7 @@ export default function AccauntPage() {
             </div>
             {showModal && (
                 <div className="modal-overlay">
-                    <div className="modal">
+                    <div className="modal-acc">
                         <h3>Вы уверены, что хотите удалить этот продукт из избранного?</h3>
                         <div className="modal-buttons">
                             <button onClick={handleDelete} className="btn-delete">Удалить</button>
