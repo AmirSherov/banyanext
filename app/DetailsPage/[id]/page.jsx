@@ -3,21 +3,24 @@
 import { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useParams } from 'next/navigation'; 
+import { useParams, useRouter } from 'next/navigation';
 import "./detailsPage.scss";
+import { MdFavoriteBorder } from "react-icons/md";
+import { FaHeart } from "react-icons/fa";
 
 export default function DetailsPage() {
-    const { id } = useParams();  
-    const [product, setProduct] = useState(null); 
+    const router = useRouter();
+    const { id } = useParams()
+    const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [isModalOpen, setIsModalOpen] = useState(false); 
-    const [selectedRating, setSelectedRating] = useState(null); 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedRating, setSelectedRating] = useState(null);
+    const [isFavourite, setIsFavourite] = useState(false);
 
     useEffect(() => {
-        if (!id) {
-            toast.error("Не удалось найти продукт.");
-            return;
-        }
+        if (!id) return;
+
+        let isMounted = true; 
 
         const fetchProduct = async () => {
             try {
@@ -26,16 +29,58 @@ export default function DetailsPage() {
                     throw new Error("Ошибка при загрузке продукта");
                 }
                 const data = await response.json();
-                setProduct(data);  
+                if (isMounted) {
+                    setProduct(data);
+                }
             } catch (error) {
-                toast.error(error.message); 
+                if (isMounted) {
+                    toast.error(error.message);
+                }
             } finally {
-                setLoading(false); 
+                if (isMounted) {
+                    setLoading(false);
+                }
             }
         };
 
-        fetchProduct(); 
-    }, [id]);
+        fetchProduct();
+
+        return () => {
+            isMounted = false;
+        };
+    }, [id]); 
+
+    useEffect(() => {
+        if (product) {
+            checkFavourite(); 
+        }
+    }, [product]);
+
+    const handleOrderClick = () => {
+        if (router) {
+            router.push(`/OrderPage/${id}`);
+        }
+    };
+
+    const checkFavourite = async () => {
+        const userId = localStorage.getItem("userId");
+        if (!userId) {
+            toast.error("Пожалуйста, войдите в аккаунт.");
+            return;
+        }
+
+        try {
+            const response = await fetch(`http://localhost:3001/users/${userId}`);
+            if (!response.ok) {
+                throw new Error("Ошибка при загрузке данных пользователя");
+            }
+            const data = await response.json();
+            const isProductInFavourites = data.favourites.some(fav => fav.id === product.id);
+            setIsFavourite(isProductInFavourites);
+        } catch (error) {
+            toast.error(error.message);
+        }
+    };
 
     const addRating = async () => {
         if (!selectedRating) {
@@ -60,9 +105,9 @@ export default function DetailsPage() {
             }
 
             setProduct(updatedProduct);
-            setIsModalOpen(false); 
+            setIsModalOpen(false);
             toast.success("Спасибо за вашу оценку!");
-            setSelectedRating(0)
+            setSelectedRating(0);
         } catch (error) {
             toast.error(error.message);
         }
@@ -102,6 +147,7 @@ export default function DetailsPage() {
             }
 
             toast.success("Продукт добавлен в избранное!");
+            setIsFavourite(true);
         } catch (error) {
             toast.error(error.message);
         }
@@ -116,6 +162,7 @@ export default function DetailsPage() {
     if (loading) {
         return <div>Загрузка...</div>;
     }
+
     if (!product) {
         return <div>Продукт не найден.</div>;
     }
@@ -141,16 +188,26 @@ export default function DetailsPage() {
                         <p>{product.category}</p>
                         <p>Цена: {product.price} $</p>
                         <p>Средняя оценка: {calculateAverageRating()} / 5 ⭐</p>
-
-                        <button
-                            className="rate-btn"
-                            onClick={() => setIsModalOpen(true)}
-                        >
-                            Оценить продукт
-                        </button>
-                        <button className="favorite-btn" onClick={addToFavourites}>
-                            Добавить в избранное
-                        </button>
+                        <div className='details-button-section'>
+                            <button
+                                className="rate-btn"
+                                onClick={() => setIsModalOpen(true)}
+                            >
+                                Оценить продукт
+                            </button>
+                            {isFavourite ? (
+                                <button onClick={addToFavourites} className='added-to-favourites'>
+                                    <FaHeart />
+                                </button>
+                            ) : (
+                                <button onClick={addToFavourites} className='add-to-favourites'>
+                                    <MdFavoriteBorder />
+                                </button>
+                            )}
+                            <button className="details-order-button" onClick={handleOrderClick}>
+                                Заказать
+                            </button>
+                        </div>
                     </div>
                     <div className="image-section">
                         <img src={product.img} alt={product.name} className="product-img" />
@@ -166,7 +223,7 @@ export default function DetailsPage() {
                             {[1, 2, 3, 4, 5].map((value) => (
                                 <span
                                     key={value}
-                                    onClick={() => setSelectedRating(value)} 
+                                    onClick={() => setSelectedRating(value)}
                                     style={{
                                         cursor: 'pointer',
                                         color: value <= selectedRating ? 'gold' : '#ccc',

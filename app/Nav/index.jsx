@@ -11,6 +11,7 @@ const Nav = () => {
   const [ current , setCurrent ] = useState('Русский');
   const [lang , setLang] = useState('ru');
   const { t , i18n } = useTranslation();
+  const [langOpen, setLangOpen] = useState(false);
   useEffect(() => {
     i18n.changeLanguage(lang);
   }, [lang]);
@@ -33,7 +34,9 @@ const Nav = () => {
   const handleLinkClick = (link) => {
     setActiveLink(link);
   };
-
+  const toggleDropdown = () => {
+    setLangOpen(!langOpen);
+  };
   return (
     <div>
       <div className={`burger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
@@ -87,12 +90,17 @@ const Nav = () => {
             Авторизация
           </Link>)}
           <div className='toggle-language'>
-            <div className='current-language'>{current}</div>
-            <div className="variables">
-              <div className="variable" onClick={() => {setCurrent('Русский') , setLang('ru')}}>Русский</div>
-              <div className="variable" onClick={() => {setCurrent('English'), setLang('en')}}>English</div>
-            </div>
-          </div>
+      <div className='current-language' onClick={toggleDropdown}>
+        {current}
+        <span className={`arrow1 ${langOpen ? 'open1' : ''}`}></span>
+      </div>
+      {langOpen && (
+        <div className="variables">
+          <div className="variable" onClick={() => {setCurrent('Русский'); setLang('ru'); toggleDropdown();}}>Русский</div>
+          <div className="variable" onClick={() => {setCurrent('English'); setLang('en'); toggleDropdown();}}>English</div>
+        </div>
+      )}
+    </div>
         </div>
       </div>
     </div>

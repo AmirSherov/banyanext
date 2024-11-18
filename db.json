@@ -118,6 +118,7 @@
         4,
         5,
         5,
+        5,
         5
       ],
       "title": "Bath Towel - Soft and Comfortable Towel for Your Russian Bathing Experience | 25 $ | Perfect for Drying Off After a Hot Steam"
@@ -185,7 +186,8 @@
       "id": "0364",
       "email": "sher@gmail.com",
       "password": "amir123",
-      "favourites": []
+      "favourites": [],
+      "orders": []
     }
   ]
 }
