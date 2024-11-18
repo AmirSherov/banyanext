@@ -3,12 +3,13 @@
 import { useState, useEffect } from 'react';
 import './products.scss';
 import { useRouter } from 'next/navigation';
-
+import { useTranslation } from 'react-i18next';
 export default function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Все');
   const router = useRouter();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -72,12 +73,12 @@ export default function ProductsPage() {
             <div onClick={() => handleOrderClick(product.id)} key={product.id} className="product-card">
               <img src={product.img} alt={product.name} className="product-image" />
               <h3>{product.name}</h3>
-              <p>Категория: {product.category}</p>
-              <p>Цена: ${product.price}</p>
+              <p>{t('product-list-category')}: {product.category}</p>
+              <p>{t('product-list-price')}: ${product.price}</p>
             </div>
           ))
         ) : (
-          <p className="no-products">Продукты не найдены</p>
+          <p className="no-products">{t('no-products')}</p>
         )}
       </div>
     </div>

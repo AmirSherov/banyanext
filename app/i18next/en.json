@@ -1,0 +1,28 @@
+{
+  "hero-title": "Welcome to our site!",
+  "hero-description": "Discover the atmosphere of traditional saunas with natural materials and luxurious amenities.",
+  "cta-button-hero": "View our saunas",
+  
+  "section-title-about": "What is a real sauna?",
+  "about-description": "A sauna is not just a place to relax but also to regain strength. Our saunas made of natural materials will give you true pleasure.",
+  
+  "section-title-advantages": "Advantages of our saunas",
+  "advantage-item-1": "Natural wood",
+  "advantage-item-2": "Modern technologies",
+  "advantage-item-3": "Custom projects",
+  "advantage-item-4": "Cozy atmosphere",
+  
+  "section-title-services": "Our services",
+  "service-card-1-title": "Custom projects",
+  "service-card-1-description": "Create a unique sauna tailored to your preferences and needs.",
+  "cta-button-service-1": "Learn more",
+  "service-card-2-title": "Ready-made projects",
+  "service-card-2-description": "Choose from our catalog of ready-made sauna projects for your site.",
+  "cta-button-service-2": "Learn more",
+  "service-card-3-title": "Consultations",
+  "service-card-3-description": "We will help you choose the optimal project and material for your sauna.",
+  "cta-button-service-3": "Learn more",
+  "product-list-category":"Category",
+  "product-list-price":"Price",
+  "no-products":"No products"
+}

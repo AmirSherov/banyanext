@@ -1,12 +1,19 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import './nav.scss';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('/');
   const [isLogged, setIsLogged] = useState(false)
   const [user, setUser] = useState(null);
+  const [ current , setCurrent ] = useState('Русский');
+  const [lang , setLang] = useState('ru');
+  const { t , i18n } = useTranslation();
+  useEffect(() => {
+    i18n.changeLanguage(lang);
+  }, [lang]);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -18,9 +25,9 @@ const Nav = () => {
   }, []);
   useEffect(() => {
     if (user) {
-      setIsLogged(true);  
+      setIsLogged(true);
     } else {
-      setIsLogged(false);  
+      setIsLogged(false);
     }
   }, [user]);
   const handleLinkClick = (link) => {
@@ -72,19 +79,22 @@ const Nav = () => {
             className={activeLink === '/accaunt' ? 'active' : ''}
           >
             Аккаунт
-          </Link> ):(<Link
+          </Link>) : (<Link
             href="/Authentication"
             onClick={() => handleLinkClick('/authentication')}
             className={activeLink === '/authentication' ? 'active' : ''}
           >
             Авторизация
-          </Link>) }
-
-
+          </Link>)}
+          <div className='toggle-language'>
+            <div className='current-language'>{current}</div>
+            <div className="variables">
+              <div className="variable" onClick={() => {setCurrent('Русский') , setLang('ru')}}>Русский</div>
+              <div className="variable" onClick={() => {setCurrent('English'), setLang('en')}}>English</div>
+            </div>
+          </div>
         </div>
       </div>
-
-
     </div>
   );
 };

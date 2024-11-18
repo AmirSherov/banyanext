@@ -69,4 +69,60 @@
   .content-shifted {
     margin-left: 250px; 
   }
+  .toggle-language {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+  
+    .current-language {
+      padding: 5px 10px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      font-size: 1.5em;
+      justify-content: center;
+    }
+  
+    .variables {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 100%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+  
+      .variable {
+        padding: 10px;
+        font-size: 14px;
+        cursor: pointer;
+        font-size: 20px;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color:yellow;
+          color: black;
+        }
+        &:not(:last-child) {
+          border-bottom: 1px solid #ddd;
+        }
+      }
+    }
+  
+    &:hover {
+      .current-language {
+        
+      }
+  
+      .variables {
+        display: block;
+      }
+    }
+  }
   
