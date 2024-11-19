@@ -28,7 +28,7 @@ const Footer = () => {
           <div className="footer-contact">
             <h3>{t('Footer.footer-contact-title')}</h3>
             <p>{t('Footer.footer-contact-email')} <a href="mailto:SherovStudio@gmail.com">SherovStudio@gmail.com</a></p>
-            <p>{t('Footer.footer-contact-phone')} +998 94 538 61 72</p>
+            <p>{t('Footer.footer-contact-phone')} <a href="tel:+998(94)538-61-72">+998 94 538 61 72</a></p>
           </div>
 
           <div className="footer-social">
