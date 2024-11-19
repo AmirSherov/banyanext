@@ -1,55 +1,58 @@
-'use client'
+'use client';
 import './policy.scss';
-
-export default function PrivacyPolicy() {
+import { useTranslation } from 'react-i18next';
+function PrivacyPolicy() {
+  const { t } = useTranslation()
   return (
     <div className="privacy-policy">
-      <h1>Политика конфиденциальности</h1>
+      <h1>{t('Policy.privacy-privacy-policy-title')}</h1>
       <p className="intro">
-        Ваша конфиденциальность важна для нас. Эта Политика конфиденциальности описывает, как мы собираем, используем, защищаем и раскрываем вашу личную информацию при использовании нашего веб-сайта.
+        {t('Policy.privacy-privacy-policy-intro')}
       </p>
 
       <div className="section">
-        <h2>1. Информация, которую мы собираем</h2>
+        <h2>{t('Policy.privacy-section-1-title')}</h2>
         <ul>
-          <li>Имя и контактная информация (например, адрес электронной почты)</li>
-          <li>Данные о вашем устройстве и браузере</li>
-          <li>История использования сайта (например, страницы, которые вы посещали)</li>
+          <li>{t('Policy.privacy-section-1-content-1')}</li>
+          <li>{t('Policy.privacy-section-1-content-2')}</li>
+          <li>{t('Policy.privacy-section-1-content-3')}</li>
         </ul>
       </div>
 
       <div className="section">
-        <h2>2. Как мы используем вашу информацию</h2>
+        <h2>{t('Policy.privacy-section-2-title')}</h2>
         <ul>
-          <li>Предоставление и улучшение наших услуг</li>
-          <li>Отправка уведомлений о новых предложениях, акциях или обновлениях</li>
-          <li>Ответ на ваши запросы или жалобы</li>
+          <li>{t('Policy.privacy-section-2-content-1')}</li>
+          <li>{t('Policy.privacy-section-2-content-2')}</li>
+          <li>{t('Policy.privacy-section-2-content-3')}</li>
         </ul>
       </div>
 
       <div className="section">
-        <h2>3. Защита вашей информации</h2>
-        <p>Мы принимаем разумные меры для защиты вашей личной информации. Однако, ни одна система передачи данных по Интернету или система хранения данных не может быть на 100% безопасной.</p>
+        <h2>{t('Policy.privacy-section-3-title')}</h2>
+        <p>{t('Policyprivacy-section-3-content')}</p>
       </div>
 
       <div className="section">
-        <h2>4. Обмен информацией с третьими сторонами</h2>
-        <p>Мы не продаем, не обмениваем и не передаем вашу личную информацию третьим лицам без вашего согласия, за исключением случаев, предусмотренных законом.</p>
+        <h2>{t('Policy.privacy-section-4-title')}</h2>
+        <p>{t('Policy.privacy-section-4-content')}</p>
       </div>
 
       <div className="section">
-        <h2>5. Использование cookies</h2>
-        <p>Наш сайт использует cookies для улучшения работы с пользователем. Cookies помогают нам запомнить ваши предпочтения и улучшать пользовательский опыт.</p>
+        <h2>{t('Policy.privacy-section-5-title')}</h2>
+        <p>{t('Policy.privacy-section-5-content')}</p>
       </div>
 
       <div className="section">
-        <h2>6. Изменения в политике конфиденциальности</h2>
-        <p>Мы можем обновлять эту Политику конфиденциальности время от времени. Изменения будут опубликованы на этой странице с указанием даты последнего обновления.</p>
+        <h2>{t('Policy.privacy-section-6-title')}</h2>
+        <p>{t('Policy.privacy-section-6-content')}</p>
       </div>
 
       <p className="footer">
-        <strong>Дата последнего обновления:</strong> 17 ноября 2024 года
+        <strong>{t('Policy.privacy-footer-last-updated')}</strong>
       </p>
     </div>
   );
 }
+
+export default PrivacyPolicy;

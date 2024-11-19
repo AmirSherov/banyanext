@@ -1,9 +1,12 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import "./OrdersPage.scss";
+import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 const OrdersPage = () => {
     const [orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { t } = useTranslation();
     useEffect(() => {
         const userId = localStorage.getItem('userId');
         if (userId) {
@@ -24,7 +27,7 @@ const OrdersPage = () => {
 
     return (
         <div className="orders-page">
-            <h1 className="title">Your Orders</h1>
+            <h1 className="title">{t('OrdersPage.your-orders')}</h1>
             {loading ? (
                 <div className="loading-spinner">Loading...</div>
             ) : orders.length > 0 ? (
@@ -34,7 +37,7 @@ const OrdersPage = () => {
                     ))}
                 </div>
             ) : (
-                <p className="no-orders">You have no orders yet.</p>
+                <p className="no-orders">{t('OrdersPage.no-orders')}</p>
             )}
         </div>
     );
@@ -57,16 +60,16 @@ const OrderCard = ({ order }) => {
         <>
             <div className="order-card">
                 <div className="order-image">
-                    <img onClick={()=>toggleModal()} src={productImage} alt={productName} className="product-img" />
+                    <img onClick={() => toggleModal()} src={productImage} alt={productName} className="product-img" />
                 </div>
                 <div className="order-info">
                     <h2 className="product-name">{productName}</h2>
-                    <p><strong>Product ID:</strong> {productId}</p>
-                    <p><strong>People Count:</strong> {peopleCount}</p>
-                    <p><strong>Hours:</strong> {hours}</p>
-                    <p><strong>Date:</strong> {date}</p>
-                    <p><strong>Size:</strong> {size}</p>
-                    <p><strong>Material:</strong> {material}</p>
+                    <p><strong>{t('OrdersPage.productId')}</strong> {productId}</p>
+                    <p><strong>{t('OrdersPage.peopleCount')}</strong> {peopleCount}</p>
+                    <p><strong>{t('OrdersPage.hours')}</strong> {hours}</p>
+                    <p><strong>{t('OrdersPage.date')}</strong> {date}</p>
+                    <p><strong>{t('OrdersPage.size')}</strong> {size}</p>
+                    <p><strong>{t('OrdersPage.material')}</strong> {material}</p>
                 </div>
             </div>
             {isModalOpen && (

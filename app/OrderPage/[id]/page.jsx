@@ -2,11 +2,13 @@
 import { useParams} from 'next/navigation';
 import { useState, useEffect } from 'react';
 import {toast, ToastContainer} from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 import './OrderPage.scss';
 import 'react-toastify/dist/ReactToastify.css';
 const OrderPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     peopleCount: '',
     hours: '',
@@ -67,30 +69,30 @@ const OrderPage = () => {
     position="top-center"
     />
     <div>
-      <h2 className='h2'>Оформление заказа</h2>
+      <h2 className='h2'>{t("OrderPage.placing-an-order")}</h2>
       <div>
         <img className='order-img' src={product.img} alt={product.name} />
         <h3 className='h3'>{product.name}</h3>
       </div>
       <form className='order-form'>
         <label>
-          Сколько людей:
+          {t("OrderPage.people-count")}
           <input min={0} max={6} type="number" name="peopleCount" value={formData.peopleCount} onChange={handleInputChange} />
         </label>
         <label>
-          На сколько часов:
+          {t("OrderPage.hour-count")}
           <input min={0} max={10} type="number" name="hours" value={formData.hours} onChange={handleInputChange} />
         </label>
         <label>
-          Дата и время:
+          {t("OrderPage.time")}
           <input type="datetime-local" name="date" value={formData.date} onChange={handleInputChange} />
         </label>
         <label>
-          Размер бани:
+          {t("OrderPage.size")}
           <input type="text" name="size" value={formData.size} onChange={handleInputChange} />
         </label>
         <label>
-          Материал:
+          {t("OrderPage.material")}
           <input type="text" name="material" value={formData.material} onChange={handleInputChange} />
         </label>
         <button className='order-button-orderPage' type="button" onClick={handleSubmit}>Заказать</button>

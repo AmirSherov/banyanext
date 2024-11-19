@@ -6,6 +6,13 @@
       "category": "Японские",
       "price": 1200,
       "img": "/images/yaponskie_bani.jpg",
+      "comments": [
+        {
+          "id": "1",
+          "email": "sher4mir@gmail.com",
+          "text": "Good product, very satisfied with the quality and price."
+        }
+      ],
       "ratings": [
         5,
         4,
@@ -23,6 +30,13 @@
       "category": "Японские",
       "price": 1200,
       "img": "/images/yaponskie_bani2.jpg",
+      "comments": [
+        {
+          "id": "1",
+          "email": "sher4mir@gmail.com",
+          "text": "Good product, very satisfied with the quality and price."
+        }
+      ],
       "ratings": [
         5,
         4,
@@ -42,6 +56,13 @@
       "category": "Японские",
       "price": 25,
       "img": "/images/yaponskie_bani3.jpg",
+      "comments": [
+        {
+          "id": "1",
+          "email": "sher4mir@gmail.com",
+          "text": "Good product, very satisfied with the quality and price."
+        }
+      ],
       "ratings": [
         5,
         4,
@@ -62,6 +83,13 @@
       "category": "Японские",
       "price": 25,
       "img": "/images/yaponskie_bani4.jpg",
+      "comments": [
+        {
+          "id": "1",
+          "email": "sher4mir@gmail.com",
+          "text": "Good product, very satisfied with the quality and price."
+        }
+      ],
       "ratings": [
         5,
         4,
@@ -79,6 +107,13 @@
       "category": "Японские",
       "price": 25,
       "img": "/images/yaponskie_bani5.jpg",
+      "comments": [
+        {
+          "id": "1",
+          "email": "sher4mir@gmail.com",
+          "text": "Good product, very satisfied with the quality and price."
+        }
+      ],
       "ratings": [
         5,
         4,
@@ -96,6 +131,13 @@
       "category": "Русские",
       "price": 1500,
       "img": "/images/russkie_bani.jpg",
+      "comments": [
+        {
+          "id": "1",
+          "email": "sher4mir@gmail.com",
+          "text": "Good product, very satisfied with the quality and price."
+        }
+      ],
       "ratings": [
         5,
         4,
@@ -115,6 +157,13 @@
       "category": "Русские",
       "price": 25,
       "img": "/images/russkie_bani2.webp",
+      "comments": [
+        {
+          "id": "1",
+          "email": "sher4mir@gmail.com",
+          "text": "Good product, very satisfied with the quality and price."
+        }
+      ],
       "ratings": [
         5,
         4,
@@ -123,6 +172,8 @@
         5,
         5,
         5,
+        5,
+        1,
         5
       ],
       "title": "Bath Towel - Soft and Comfortable Towel for Your Russian Bathing Experience | 25 $ | Perfect for Drying Off After a Hot Steam"
@@ -133,6 +184,13 @@
       "category": "Русские",
       "price": 200,
       "img": "/images/russkie_bani3.jpg",
+      "comments": [
+        {
+          "id": "1",
+          "email": "sher4mir@gmail.com",
+          "text": "Good product, very satisfied with the quality and price."
+        }
+      ],
       "ratings": [
         5,
         4,
@@ -151,6 +209,13 @@
       "category": "Русские",
       "price": 25,
       "img": "/images/russkie_bani4.png",
+      "comments": [
+        {
+          "id": "1",
+          "email": "sher4mir@gmail.com",
+          "text": "Good product, very satisfied with the quality and price."
+        }
+      ],
       "ratings": [
         5,
         4,
@@ -168,6 +233,13 @@
       "category": "Американские",
       "price": 300,
       "img": "/images/amerikanskie_bani.jpg",
+      "comments": [
+        {
+          "id": "1",
+          "email": "sher4mir@gmail.com",
+          "text": "Good product, very satisfied with the quality and price."
+        }
+      ],
       "ratings": [
         5,
         4,
@@ -201,26 +273,6 @@
           "material": "wooden",
           "productName": "Bath Towel",
           "productImage": "/images/yaponskie_bani3.jpg"
-        },
-        {
-          "productId": "4",
-          "peopleCount": "6",
-          "hours": "10",
-          "date": "2024-12-23T22:00",
-          "size": "normal",
-          "material": "wood",
-          "productName": "Yukari Sauna",
-          "productImage": "/images/yaponskie_bani4.jpg"
-        },
-        {
-          "productId": "4",
-          "peopleCount": "5",
-          "hours": "4",
-          "date": "2024-12-20T23:00",
-          "size": "normal",
-          "material": "wood",
-          "productName": "Yukari Sauna",
-          "productImage": "/images/yaponskie_bani4.jpg"
         }
       ]
     }

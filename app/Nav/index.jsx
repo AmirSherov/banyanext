@@ -53,48 +53,48 @@ const Nav = () => {
             onClick={() => handleLinkClick('/')}
             className={activeLink === '/' ? 'active' : ''}
           >
-            Главная
+            {t('Nav.home')}
           </Link>
           <Link
             href="/About"
             onClick={() => handleLinkClick('/about')}
             className={activeLink === '/about' ? 'active' : ''}
           >
-            О нас
+            {t('Nav.about')}
           </Link>
           <Link
             href="/Contact"
             onClick={() => handleLinkClick('/contact')}
             className={activeLink === '/contact' ? 'active' : ''}
           >
-            Контакты
+            {t('Nav.contacts')}
           </Link>
           <Link
             href="/Products"
             onClick={() => handleLinkClick('/banya')}
             className={activeLink === '/banya' ? 'active' : ''}
           >
-            Бани
+            {t('Nav.services')}
           </Link>
           <Link
             href="/OrdersPage"
             onClick={() => handleLinkClick('/orders')}
             className={activeLink === '/orders' ? 'active' : ''}
           >
-            Заказы
+            {t('Nav.orders')}
           </Link>
           {isLogged ? (<Link
             href="/Accaunt"
             onClick={() => handleLinkClick('/accaunt')}
             className={activeLink === '/accaunt' ? 'active' : ''}
           >
-            Аккаунт
+            {t('Nav.accaunt')}
           </Link>) : (<Link
             href="/Authentication"
             onClick={() => handleLinkClick('/authentication')}
             className={activeLink === '/authentication' ? 'active' : ''}
           >
-            Авторизация
+            {t('Nav.authorization')}
           </Link>)}
           <div className='toggle-language'>
       <div className='current-language' onClick={toggleDropdown}>

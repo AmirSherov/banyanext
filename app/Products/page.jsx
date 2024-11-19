@@ -1,4 +1,3 @@
-
 'use client';
 import { useState, useEffect } from 'react';
 import './products.scss';
@@ -73,8 +72,8 @@ export default function ProductsPage() {
             <div onClick={() => handleOrderClick(product.id)} key={product.id} className="product-card">
               <img src={product.img} alt={product.name} className="product-image" />
               <h3>{product.name}</h3>
-              <p>{t('product-list-category')}: {product.category}</p>
-              <p>{t('product-list-price')}: ${product.price}</p>
+              <p>{t('Products.product-list-category')}: {product.category}</p>
+              <p>{t('Products.product-list-price')}: ${product.price}</p>
             </div>
           ))
         ) : (
