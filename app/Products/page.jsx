@@ -51,6 +51,7 @@ export default function ProductsPage() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+        <i className='fa fa-search'></i>
       </div>
 
       <div className="categories">
