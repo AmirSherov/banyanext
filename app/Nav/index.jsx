@@ -76,6 +76,13 @@ const Nav = () => {
           >
             Бани
           </Link>
+          <Link
+            href="/OrdersPage"
+            onClick={() => handleLinkClick('/orders')}
+            className={activeLink === '/orders' ? 'active' : ''}
+          >
+            Заказы
+          </Link>
           {isLogged ? (<Link
             href="/Accaunt"
             onClick={() => handleLinkClick('/accaunt')}

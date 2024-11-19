@@ -31,7 +31,8 @@
         5,
         5,
         5,
-        5
+        5,
+        2
       ],
       "title": "Wooden Sauna SunShine - High-Quality Japanese Style Sauna with Exquisite Wooden Finish | 1200 $ | Perfect for Relaxation"
     },
@@ -48,6 +49,9 @@
         4,
         5,
         5,
+        5,
+        4,
+        4,
         5
       ],
       "title": "Bath Towel - Essential Accessory for Your Japanese Bathing Experience | Soft and Absorbent | Only 25 $ | Perfect After a Hot Sauna"
@@ -187,7 +191,38 @@
       "email": "sher@gmail.com",
       "password": "amir123",
       "favourites": [],
-      "orders": []
+      "orders": [
+        {
+          "productId": "3",
+          "peopleCount": "3",
+          "hours": "3",
+          "date": "2222-12-12T22:22",
+          "size": "large",
+          "material": "wooden",
+          "productName": "Bath Towel",
+          "productImage": "/images/yaponskie_bani3.jpg"
+        },
+        {
+          "productId": "4",
+          "peopleCount": "6",
+          "hours": "10",
+          "date": "2024-12-23T22:00",
+          "size": "normal",
+          "material": "wood",
+          "productName": "Yukari Sauna",
+          "productImage": "/images/yaponskie_bani4.jpg"
+        },
+        {
+          "productId": "4",
+          "peopleCount": "5",
+          "hours": "4",
+          "date": "2024-12-20T23:00",
+          "size": "normal",
+          "material": "wood",
+          "productName": "Yukari Sauna",
+          "productImage": "/images/yaponskie_bani4.jpg"
+        }
+      ]
     }
   ]
 }

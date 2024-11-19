@@ -26,9 +26,9 @@ export default function ProductsPage() {
   }, []);
   const handleOrderClick = (id) => {
     if (router) {
-        router.push(`/DetailsPage/${id}`);
+      router.push(`/DetailsPage/${id}`);
     }
-};
+  };
   const categories = ['Все'];
   products.forEach((product) => {
     if (!categories.includes(product.category)) {
@@ -57,9 +57,8 @@ export default function ProductsPage() {
         {categories.map((category) => (
           <button
             key={category}
-            className={`category-button ${
-              selectedCategory === category ? 'active' : ''
-            }`}
+            className={`category-button ${selectedCategory === category ? 'active' : ''
+              }`}
             onClick={() => setSelectedCategory(category)}
           >
             {category}

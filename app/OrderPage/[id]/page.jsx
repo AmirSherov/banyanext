@@ -3,6 +3,7 @@ import { useParams} from 'next/navigation';
 import { useState, useEffect } from 'react';
 import {toast, ToastContainer} from 'react-toastify';
 import './OrderPage.scss';
+import 'react-toastify/dist/ReactToastify.css';
 const OrderPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -11,7 +12,7 @@ const OrderPage = () => {
     hours: '',
     date: '',
     size: '',
-    material: '',
+    material: ''
   });
 
   useEffect(() => {
@@ -41,7 +42,7 @@ const OrderPage = () => {
                 productId: id,
                 ...formData,
                 productName: product.name,
-                productImage: product.image,
+                productImage: product.img,
               },
             ],
           };
