@@ -14,12 +14,6 @@
         }
       ],
       "ratings": [
-        5,
-        4,
-        3,
-        4,
-        5,
-        5,
         5
       ],
       "title": "Wooden Sauna - Traditional Japanese Bathhouse with Premium Wooden Construction | 1200 $ | Authentic Japanese Sauna Experience"
@@ -39,14 +33,7 @@
       ],
       "ratings": [
         5,
-        4,
-        3,
-        4,
-        5,
-        5,
-        5,
-        5,
-        2
+        4
       ],
       "title": "Wooden Sauna SunShine - High-Quality Japanese Style Sauna with Exquisite Wooden Finish | 1200 $ | Perfect for Relaxation"
     },
@@ -64,15 +51,6 @@
         }
       ],
       "ratings": [
-        5,
-        4,
-        3,
-        4,
-        5,
-        5,
-        5,
-        4,
-        4,
         5
       ],
       "title": "Bath Towel - Essential Accessory for Your Japanese Bathing Experience | Soft and Absorbent | Only 25 $ | Perfect After a Hot Sauna"
@@ -91,12 +69,6 @@
         }
       ],
       "ratings": [
-        5,
-        4,
-        3,
-        4,
-        5,
-        5,
         5
       ],
       "title": "Yukari Sauna - Elegant Japanese Bathhouse with Authentic Design | 25 $ | Ideal for a Traditional Japanese Steam Bath"
@@ -115,12 +87,6 @@
         }
       ],
       "ratings": [
-        5,
-        4,
-        3,
-        4,
-        5,
-        5,
         5
       ],
       "title": "Tengu-Banya - Traditional Japanese Steam Bathhouse with Cultural Significance | 25 $ | Experience the Relaxing Atmosphere of Japan"
@@ -141,13 +107,7 @@
       "ratings": [
         5,
         4,
-        3,
-        4,
-        5,
-        5,
-        5,
-        2,
-        1
+        3
       ],
       "title": "Modern Sauna - Cutting-Edge Russian Sauna with Contemporary Design and Features | 1500 $ | Premium Quality for Maximum Comfort"
     },
@@ -166,15 +126,7 @@
       ],
       "ratings": [
         5,
-        4,
-        3,
-        4,
-        5,
-        5,
-        5,
-        5,
-        1,
-        5
+        4
       ],
       "title": "Bath Towel - Soft and Comfortable Towel for Your Russian Bathing Experience | 25 $ | Perfect for Drying Off After a Hot Steam"
     },
@@ -193,13 +145,7 @@
       ],
       "ratings": [
         5,
-        4,
-        3,
-        4,
-        5,
-        5,
-        5,
-        5
+        4
       ],
       "title": "Сибирская баня - Authentic Russian Sauna with a Rustic, Traditional Touch | 200 $ | Ideal for a Classic Russian Bathing Experience"
     },
@@ -217,12 +163,6 @@
         }
       ],
       "ratings": [
-        5,
-        4,
-        3,
-        4,
-        5,
-        5,
         5
       ],
       "title": "Кавказская баня - Traditional Russian Bathhouse from the Caucasus Region | 25 $ | Experience the Unique Steam and Relaxation of the Caucasus"
@@ -242,12 +182,7 @@
       ],
       "ratings": [
         5,
-        4,
-        3,
-        4,
-        5,
-        5,
-        5
+        4
       ],
       "title": "Sauna Heater - Premium American Sauna Heater for Consistent Heat and Comfort | 300 $ | Ideal for a Relaxing and Rejuvenating Sauna Experience"
     }
@@ -262,7 +197,27 @@
       "id": "0364",
       "email": "sher@gmail.com",
       "password": "amir123",
-      "favourites": [],
+      "favourites": [
+        {
+          "id": "2",
+          "name": "Wooden Sauna SunShine",
+          "category": "Японские",
+          "price": 1200,
+          "img": "/images/yaponskie_bani2.jpg",
+          "comments": [
+            {
+              "id": "1",
+              "email": "sher4mir@gmail.com",
+              "text": "Good product, very satisfied with the quality and price."
+            }
+          ],
+          "ratings": [
+            5,
+            4
+          ],
+          "title": "Wooden Sauna SunShine - High-Quality Japanese Style Sauna with Exquisite Wooden Finish | 1200 $ | Perfect for Relaxation"
+        }
+      ],
       "orders": [
         {
           "productId": "3",

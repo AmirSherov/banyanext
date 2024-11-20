@@ -1,11 +1,12 @@
 'use client';
-
+import { useTranslation } from 'react-i18next';
 import './authentication.scss';
 import { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function AuthPage() {
+  const { t } = useTranslation();
   const [isFlipped, setIsFlipped] = useState(false);
   const [loginData, setLoginData] = useState({
     email: '',
@@ -60,7 +61,7 @@ export default function AuthPage() {
         (u) => u.email === loginData.email && u.password === loginData.password
       );
       if (user) {
-        toast.success('Добро пожаловать!');
+        toast.success(t("Authorization.welcome-message"));
         localStorage.setItem("userId" , user.id);
         setTimeout(()=>{
           window.location.href = '/';
@@ -69,29 +70,29 @@ export default function AuthPage() {
           window.location.reload();
         },4000)
       } else {
-        toast.error('Неверный email или пароль');
+        toast.error(t("Authorization.incorrect-email-or-password"));
       }
     } else {
       if (registerData.email === '' || registerData.password === '' || registerData.confirmPassword === '') {
-        toast.error('Пожалуйста, заполните все поля');
+        toast.error(t("Authorization.fill-all-fields"));
         return;
       }
       if (!registerData.email.includes('@gmail.com')) {
-        toast.error('Некорректная электронная почта');
+        toast.error(t("Authorization.incorrect-email"));
         return;
       }
       if (registerData.password !== registerData.confirmPassword) {
-        toast.error('Пароли не совпадают');
+        toast.error(t("Authorization.passwords-do-not-match"));
         return;
       }
       if (registerData.password.length < 6) {
-        toast.error('Пароль должен содержать не менее 6 символов');
+        toast.error(t("Authorization.password-length"));
         return;
       }
 
       const userExists = users.find((u) => u.email === registerData.email);
       if (userExists) {
-        toast.error('Пользователь с таким email уже зарегистрирован');
+        toast.error(t("Authorization.user-already-exists"));
       } else {
         const newUser = {
           email: registerData.email,
@@ -108,12 +109,12 @@ export default function AuthPage() {
         })
           .then((response) => response.json())
           .then(() => {
-            toast.success('Регистрация прошла успешно');
+            toast.success(t("Authorization.succesful-registration"));
             setRegisterData({ email: '', password: '', confirmPassword: '' });
             setIsFlipped(false); 
           })
           .catch(() => {
-            toast.error('Произошла ошибка при регистрации');
+            toast.error(t("Authorization.registration-error"));
           });
       }
     }
@@ -136,76 +137,76 @@ export default function AuthPage() {
         <div className={`auth-card ${isFlipped ? 'flipped' : ''}`}>
 
           <div className="card-face front-face">
-            <h2 className="form-title">Вход</h2>
+            <h2 className="form-title">{t("Authorization.login")}</h2>
             <form className="auth-form" onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="email">Электронная почта</label>
+                <label htmlFor="email">{t("Authorization.email")}</label>
                 <input
                   type="email"
                   id="email"
-                  placeholder="Введите email"
+                  placeholder={t("Authorization.enter-email")}
                   value={loginData.email}
                   onChange={handleInputChange}
                   required
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="password">Пароль</label>
+                <label htmlFor="password">{t("Authorization.password")}</label>
                 <input
                   type="password"
                   id="password"
-                  placeholder="Введите пароль"
+                  placeholder={t("Authorization.enter-password")}
                   value={loginData.password}
                   onChange={handleInputChange}
                   required
                 />
               </div>
-              <button type="submit" className="auth-button">Войти</button>
+              <button type="submit" className="auth-button">{t("Authorization.login")}</button>
               <p className="switch-text">
-                Нет аккаунта? <span onClick={handleFlip}>Зарегистрируйтесь</span>
+                {t("Authorization.no-account")} <span onClick={handleFlip}>{t("Authorization.register-link")}</span>
               </p>
             </form>
           </div>
 
           <div className="card-face back-face">
-            <h2 className="form-title">Регистрация</h2>
+            <h2 className="form-title">{t("Authorization.registration")}</h2>
             <form className="auth-form" onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="email">Электронная почта</label>
+                <label htmlFor="email">{t("Authorization.email")}</label>
                 <input
                   type="text"
                   id="email"
-                  placeholder="Введите email"
+                  placeholder={t("Authorization.enter-email")}
                   value={registerData.email}
                   onChange={handleInputChange}
                   required
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="password">Пароль</label>
+                <label htmlFor="password">{t("Authorization.password")}</label>
                 <input
                   type="password"
                   id="password"
-                  placeholder="Введите пароль"
+                  placeholder={t("Authorization.enter-password")}
                   value={registerData.password}
                   onChange={handleInputChange}
                   required
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="confirmPassword">Повторите пароль</label>
+                <label htmlFor="confirmPassword">{t("Authorization.repeat-password")}</label>
                 <input
                   type="password"
                   id="confirmPassword"
-                  placeholder="Повторите пароль"
+                  placeholder={t("Authorization.repeat-password")}
                   value={registerData.confirmPassword}
                   onChange={handleInputChange}
                   required
                 />
               </div>
-              <button type="submit" className="auth-button">Регистрация</button>
+              <button type="submit" className="auth-button">{t("Authorization.registration")}</button>
               <p className="switch-text">
-                Уже есть аккаунт? <span onClick={handleFlip}>Войти</span>
+                {t("Authorization.already-have-account")} <span onClick={handleFlip}>{t("Authorization.login-link")}</span>
               </p>
             </form>
           </div>

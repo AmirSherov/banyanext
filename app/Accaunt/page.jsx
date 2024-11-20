@@ -4,9 +4,11 @@ import { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2'
+import { useTranslation } from "react-i18next";
 
 export default function AccauntPage() {
     const [user, setUser] = useState(null);
+    const { t } = useTranslation();
     const [favourites, setFavourites] = useState([]);
     const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
@@ -16,14 +18,14 @@ export default function AccauntPage() {
         const userId = localStorage.getItem("userId");
 
         if (!userId) {
-            toast.error("Пожалуйста, войдите в аккаунт.");
+            toast.error(t("Accaunt.enter-to-accaunt"));
             return;
         }
         const fetchUser = async () => {
             try {
                 const response = await fetch(`http://localhost:3001/users/${userId}`);
                 if (!response.ok) {
-                    throw new Error("Ошибка при загрузке данных пользователя");
+                    toast.error(t("Accaunt.error-loading-user-data"));
                 }
                 const data = await response.json();
                 setUser(data);
@@ -54,9 +56,9 @@ export default function AccauntPage() {
                 }),
             });
             if (!response.ok) {
-                throw new Error("Ошибка при обновлении данных пользователя");
+                toast.error(t("Accaunt.error-updating-user-data"));
             }
-            toast.success("Продукт удален из избранного");
+            toast.success(t("Accaunt.deleted-from-fav"));
         } catch (error) {
             toast.error(error.message);
         } finally {
@@ -66,29 +68,29 @@ export default function AccauntPage() {
     };
     const handleLogout = () => {
         Swal.fire({
-            title: "Are you sure?",
-            text: "You want to logout?",
+            title: t("Accaunt.logout-sure"),
+            text: t("Accaunt.logout-text"),
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, logout!"
-          }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
-              Swal.fire({
-                title: "Logged Out!",
-                text: "Your have logged out successfully.",
-                icon: "success"
-              });
-              localStorage.removeItem("userId");
-                setTimeout(()=>{
+                Swal.fire({
+                    title: t("Accaunt.logout-success"),
+                    text: t("Accaunt.logout"),
+                    icon: "success"
+                });
+                localStorage.removeItem("userId");
+                setTimeout(() => {
                     window.location.href = "/";
-                },2000)
-                setTimeout(()=>{
-                  window.location.reload();
-                },3000)
+                }, 2000)
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000)
             }
-          });
+        });
 
     }
     const handleModalClose = () => {
@@ -109,26 +111,26 @@ export default function AccauntPage() {
         <>
             <ToastContainer />
             <div className="favourites">
-                <h1>Аккаунт</h1>
+                <h1>{t("Accaunt.accaunt")}</h1>
                 {user && (
                     <div className="user-info">
                         <div className="user-avatar">
                             <img src={user.avatar || '/images/userProfile.png'} alt="Avatar" />
                         </div>
                         <div className="user-details">
-                            <p className="user-email">{user.email} </p><p onClick={handleLogout}><img className="logout" width={20} src="/images/logout.png" alt="" />   Log Out!</p>
+                            <p className="user-email">{user.email} </p><p onClick={handleLogout}><img className="logout" width={20} src="/images/logout.png" alt="" /> {t("Accaunt.logout-btn")}</p>
                         </div>
                     </div>
                 )}
 
                 {favourites.length === 0 ? (
-                    <p>В избранном пока нет продуктов.</p>
+                    <p>{t("Accaunt.no-products-in-fav")}</p>
                 ) : (
                     <div className="favourites-list">
                         {favourites.map(product => (
                             <div
-                                onClick={() => handleCardClick(product)} 
-                                className="favourite-card" 
+                                onClick={() => handleCardClick(product)}
+                                className="favourite-card"
                                 key={product.id}
                             >
                                 <img src={product.img} alt={product.name} className="favourite-img" />
@@ -146,10 +148,10 @@ export default function AccauntPage() {
             {showModal && (
                 <div className="modal-overlay">
                     <div className="modal-acc">
-                        <h3>Вы уверены, что хотите удалить этот продукт из избранного?</h3>
+                        <h3></h3>
                         <div className="modal-buttons">
-                            <button onClick={handleDelete} className="btn-delete">Удалить</button>
-                            <button onClick={handleModalClose} className="btn-cancel">Отмена</button>
+                            <button onClick={handleDelete} className="btn-delete">{t("Accaunt.delete")}</button>
+                            <button onClick={handleModalClose} className="btn-cancel">{t("Accaunt.cancel")}</button>
                         </div>
                     </div>
                 </div>

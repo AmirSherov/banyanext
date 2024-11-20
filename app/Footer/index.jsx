@@ -37,6 +37,8 @@ const Footer = () => {
               <Link href="#" className="social-icon"><i className="fab fa-facebook-f"></i></Link>
               <Link href="#" className="social-icon"><i className="fab fa-instagram"></i></Link>
               <Link href="#" className="social-icon"><i className="fab fa-youtube"></i> </Link>
+              <Link href="https://github.com/AmirSherov" className="social-icon"><i className="fab fa-github"></i> </Link>
+              <Link href="https://t.me/smile_zxc" className="social-icon"><i className="fab fa-telegram"></i> </Link>
             </div>
           </div>
         </div>
