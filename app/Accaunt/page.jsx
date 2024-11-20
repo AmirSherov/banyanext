@@ -148,7 +148,7 @@ export default function AccauntPage() {
             {showModal && (
                 <div className="modal-overlay">
                     <div className="modal-acc">
-                        <h3></h3>
+                        <h3>{t("Accaunt.delete-text")}</h3>
                         <div className="modal-buttons">
                             <button onClick={handleDelete} className="btn-delete">{t("Accaunt.delete")}</button>
                             <button onClick={handleModalClose} className="btn-cancel">{t("Accaunt.cancel")}</button>

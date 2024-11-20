@@ -167,3 +167,90 @@ body {
   margin-bottom: 15px;
   object-fit: cover;
 }
+.price-filter-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+
+  .filter-button {
+    padding: 10px 15px;
+    border: 1px solid #ffd700; 
+    background-color: #000; 
+    color: #ffd700; 
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: #ffd700; 
+      color: #000; 
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%; 
+    left: 0px;
+    width: 150%;
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #000; 
+    border: 1px solid #ffd700; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+
+    display: none; 
+    flex-direction: column;
+    gap: 10px;
+
+    &.active {
+      display: flex; 
+    }
+
+    .price-input-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+
+      .price-label {
+        color: #ffd700; 
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 80px;
+        padding: 5px;
+        border: 1px solid #ffd700; 
+        border-radius: 5px;
+        background-color: #000;
+        color: #fff; 
+        font-size: 14px;
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 5px #ffd700; 
+        }
+      }
+    }
+
+    .apply-button {
+      padding: 8px 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #ffd700;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #ffcc00; 
+      }
+    }
+  }
+}
+
